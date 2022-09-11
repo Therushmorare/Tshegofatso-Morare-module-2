@@ -1,0 +1,63 @@
+<!Doctype html>
+<html lang="en-us">
+    <head>
+        <title>Information Saver</title>
+    </head>
+
+    <body>
+        <center>
+            <h1>Log in</h1>
+            <br />
+                <input type="text" id="firstName" name="first_name" placeholder="your first name">
+                <br />
+                <input type="text" id="secondName" name="second_name" placeholder="your second name">
+                <br />
+                <input type="text" id="school" name="institution" placeholder="your institution">
+                <br />
+                <input type="text" id="gitHubName" name="gitHubID" placeholder="your github username">
+                <br />
+                <button name="submit" onclick="submitBtn()">Submit</button>
+        </center>
+    </body>
+</html>
+
+<script type="text/javascript">
+    //assigning variables to be used
+    var fName, sName, institution, gitHubUsername;
+
+    //function to be used on button click
+    function submitBtn()
+    {
+         //get form values then feed them to variables
+         fName = document.getElementById("firstName").value;
+         sName = document.getElementById("secondName").value;
+         institution = document.getElementById("school").value;
+         gitHubUsername = document.getElementById("gitHubName").value;
+         
+        //check if the user is submitting an empty form
+        nameValidator(fName);
+        nameValidator(sName);
+        nameValidator(institution);
+        nameValidator(gitHubUsername);
+
+        //consolelog() every variable
+        console.log("My name is"+""+fName+""+sName+""+""+"a student from"+""+institution+""+"and my GitHub username is"+""+gitHubUsername);
+
+        //alert("My name is"+fName+""+sName+""+"a student from"+institution+""+"and my GitHub username is"+""+gitHubUsername);
+    }
+//validate every string input
+    function nameValidator(stringName)
+    {
+        if(stringName.length == 0 || stringName.length == "")
+        {
+            alert("input cannot be empty");
+        }else if(stringName.length < 3 || stringName.length > 40)
+          {
+            alert("Name is invalid its either too short or long, must be between 3 to 25 chars")
+          }else
+           {
+            return stringName
+           }
+    }
+
+</script>

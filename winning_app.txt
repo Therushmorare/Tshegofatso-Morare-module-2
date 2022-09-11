@@ -1,0 +1,4 @@
+Winning App = Cycles
+Developer =  Tshegofatso Morare
+Category = Finance
+institution = Vaal University Of Technology
